@@ -1,4 +1,4 @@
-// src/main.rs
+
 
 #![no_std] // don't link the Rust standard library
 #![no_main] // disable all Rust-level entry points
@@ -11,7 +11,7 @@ fn panic(_info: &PanicInfo) -> ! {
     loop {}
 }
 static HELLO: &[u8] = b"Hello World!";
-#[no_mangle] // don't mangle the name of this function
+#[no_mangle] 
 pub extern "C" fn _start() -> ! {
     let vga_buffer = 0xb8000 as *mut u8;
 
